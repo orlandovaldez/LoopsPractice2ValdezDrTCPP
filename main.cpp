@@ -7,7 +7,7 @@
 	and/or legitimate user error. 
 	//Try and Catch blocks are used in error checking
 	Teacher: Dr. Tyson McMillan, Ph.D.  
-  STUDENT (McMillanite):
+  STUDENT (Orlando Valdez): Loops Practice 2 - 1-29-2020
 */
 #include <cstdlib>  // Provides EXIT_SUCCESS
 #include <iostream>  // Provides cout, cerr, endl
@@ -23,7 +23,7 @@ int main()
 	int input = 0;
 	input = validateInt(input); //validate my integer by function call, save that value into input
     cout << "You entered valid int: " << input << endl;
-    
+     
 	/****************Extend code to Validate double (follow int pattern)**********/
 	double inputDouble = 0.0;
   	inputDouble = validateDouble(inputDouble); //validate my double by function call, save that value into inputDouble
@@ -80,7 +80,11 @@ int main()
       cout << "\nPlease enter a numerical grade (-1 to exit): ";
       grade = validateDouble(grade); //accept grade and validate the data type
       //if condition test
-      if(grade >= 90.0)
+      if(grade == -1)
+      {
+        cout << "\nHasta la vista, Baby!" << endl;
+      }
+      else if(grade >= 90.0)
       {
         cout << "\nThat's an A!" << endl; 
       }
@@ -103,6 +107,69 @@ int main()
       else {cout << "\nInvalid input." << endl;}
 
    }while(grade != -1); //end do 
-   
+   //Dr_T Challenge 1
+   //1. Accept input into a double (num)
+   //2. num is a stopping point
+   //3. Show all even numbers from 1...num
+   //4. Append the word "even" to the end of each number
+   //5. Show each number on a line of its own
+  
+  double num = 0.0;
+  cout << "\nPlease enter an end point: ";
+  num = validateDouble(num);
+  for(int i = 1; i <= num; i++)
+  {
+    //a number is even if (i %2 ) == 0 
+    if ((i % 2) == 0 ) //test for even
+    {
+    cout << i << " even" << endl;
+    }
+  }
+  //Dr_T Challennge 2
+  /*
+    1. accept char input of a letter grade (A-F) or || (a-f)
+    2. For each letter grade, output the corresponding percent value range.
+    i.e. 'A' || 'a'
+    "Congrats you earneede a 90 or above"
+    3. E || e show an exit message
+    4. Loop until E && e to exit - DeMorgan's Law!!!
+    5. Bonus: show each message in a color of it's own (see Dr-T's Fork Starter on Color for this enviroment)
+    */
+  
+  
+  char lettergrade = '\0';
+  
+  do 
+  {
+    cout << "\nPlease enter a letter grade (e/E to exit): ";
+    lettergrade = validateChar(lettergrade);
+
+    if(lettergrade == 'A' || lettergrade == 'a')
+    {
+      cout << "\nGrade is 90 or above!";
+    }
+    else if (lettergrade == 'B' || lettergrade == 'b')
+    {
+      cout << "\nGrade is 80 or above!";
+    }
+    else if (lettergrade == 'C' || lettergrade == 'c')
+    {
+      cout << "\nGrade is 70 or above!";
+    }
+    else if (lettergrade == 'D' || lettergrade == 'd')
+    {
+      cout << "\nrade is 60 or above!";
+    }
+
+    else if (lettergrade == 'E' || lettergrade == 'e')
+    {
+      cout << "\nProgram exit ..." << endl;
+    }
+
+
+
+
+  }
+    
     return 0;
 }
